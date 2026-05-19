@@ -1,0 +1,128 @@
+.repo-container {
+  width: 100%;
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-xl);
+  padding: 28px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.repo-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124,58,237,0.5), var(--accent-cyan), transparent);
+}
+
+.repo-container:hover {
+  border-color: var(--border-mid);
+}
+
+.repo-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.repo-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(124, 58, 237, 0.15);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.repo-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+.repo-subtitle {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 20px;
+  margin-left: 48px;
+}
+
+.repo-input-section {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.repo-input-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.repo-input-prefix {
+  position: absolute;
+  left: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--text-muted);
+  pointer-events: none;
+  user-select: none;
+}
+
+.repo-input {
+  width: 100%;
+  padding: 14px 16px 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-dim);
+  background: rgba(2, 4, 8, 0.6);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-family: 'JetBrains Mono', monospace;
+  transition: all 0.25s ease;
+}
+
+.repo-input::placeholder {
+  color: var(--text-muted);
+}
+
+.repo-input:focus {
+  border-color: var(--accent-violet);
+  background: rgba(124, 58, 237, 0.04);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.08);
+}
+
+.repo-button {
+  padding: 14px 24px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--accent-violet), #9d4edd);
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  font-family: 'Syne', sans-serif;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+  box-shadow: var(--glow-violet);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.repo-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.5);
+}

@@ -1,0 +1,12 @@
+/* index.css — global resets & overrides */
+
+/* All base styles live in styles/global.css */
+/* This file only adds specificity overrides for Monaco editor */
+
+.monaco-editor .margin {
+  background: #0d1117 !important;
+}
+
+.monaco-editor-background {
+  background: #0d1117 !important;
+}

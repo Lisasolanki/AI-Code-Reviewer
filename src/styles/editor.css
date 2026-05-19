@@ -1,0 +1,101 @@
+.editor-wrapper {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-dim);
+  transition: border-color 0.3s ease;
+}
+
+.editor-wrapper:focus-within {
+  border-color: var(--border-bright);
+  box-shadow: 0 0 0 3px rgba(0, 245, 255, 0.06);
+}
+
+.editor-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0d1117;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border-dim);
+}
+
+.editor-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.editor-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.editor-dot.red { background: #ff5f57; }
+.editor-dot.yellow { background: #febc2e; }
+.editor-dot.green { background: #28c840; }
+
+.editor-lang {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+.editor-button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 15px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--accent-cyan), #00c8d4);
+  color: var(--bg-void);
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Syne', sans-serif;
+  letter-spacing: 0.04em;
+  transition: all 0.25s ease;
+  box-shadow: var(--glow-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.editor-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.editor-button:hover::before {
+  opacity: 1;
+}
+
+.editor-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(0, 245, 255, 0.5);
+}
+
+.editor-button:disabled {
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.editor-button:disabled::before {
+  display: none;
+}
+
+.analyzing-pulse {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-cyan);
+  border-radius: 50%;
+  animation: blink 0.8s infinite;
+}
